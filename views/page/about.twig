@@ -1,0 +1,161 @@
+{% extends layout %}
+{% block title %}{{ lang_message.about|raw }} - {% endblock %}
+{% block menu %}about{% endblock %}
+{% block content %}
+<div class="outers_cont_inside_page back-white">
+
+	<h1 style="visibilty: none; display:none;">{{ lang_message.about|raw }} - {{ app_name }}</h1>
+	<div class="insides_toppage_blocks">
+		<div class="blocks_bottom_intop_page pg_about prelatife">
+			<img src="{{ app.request.baseurl }}/asset/images/ill-about.jpg" alt="" class="img-responsive illustration_inside">
+			<div class="insides">
+				<div class="prelatife container">
+					<div class="blocks_top_ill">
+						<h2 class="title_page">{{ lang_message.about|raw }}</h2>
+						{% if lang_active == 'ch' %}
+						<p>来自印度尼西亚Bojonegoro的领先优质鸟巢加工厂</p>
+						{% else %}
+						<p>PT. ABADI LESTARI - Leading & Quality Bird’s Nest Processing Factory From Bojonegoro, Indonesia</p>
+						{% endif %}
+					</div>
+				</div>				
+				<div class="clear"></div>
+			</div>
+		</div>
+	</div>
+	
+	<section class="default_sc content-inside l-content-1" id="about">
+		<div class="blocks-outer-breadcrumbs">
+			<div class="prelatife container">
+				<div class="row">
+					<div class="col-md-6 col-sm-7 col-xs-9">
+						{% if lang_active == 'ch' %}
+						<ol class="breadcrumb">
+						  <li><a href="#">家</a></li>
+						  <li class="active">关于</li>
+						</ol>	
+						{% else %}
+						<ol class="breadcrumb">
+						  <li><a href="#">Home</a></li>
+						  <li class="active">About Us</li>
+						</ol>
+						{% endif %}
+						<div class="clear"></div>
+					</div>
+					<div class="col-md-6 col-sm-5 col-xs-3">
+						<div class="text-right backs_pagesn"><a href="#">{{ lang_message.back|raw }}</a></div>
+					</div>
+				</div>
+				<div class="clear"></div>
+			</div>
+		</div>
+		<div class="container prelatife midles-content">
+			<div class="content-text text-left">
+				<div class="row">
+					<div class="col-lg-3 col-md-2"></div>
+					<div class="col-lg-6 col-md-8">
+						{% if lang_active == 'ch' %}
+						<h3>自1979年以来，我们建立了国家领先的鸟巢加工厂的声誉。</h3>
+						<h6>PT Abadi Lestari Indonesia 有限公司为客户提供各种优质燕窝产品，所有的产品通过高标准过程生产出来。我们的工厂是位于东爪哇，Bojonegoro市，其位置对我们来看占有战略性的地位，一方面我们离当地燕窝农民近，另一方面也缩短距离收获又好又稳定的原料。</h6>
+						{# <p>This strategic position implies to fresh raw ingredients and stable supply from local farmers. PT. Abadi Lestari offers its customers a wide range of Bird’s Nest product quality, all of them are processed at the highest grade of processing quality. With our workshop at Bojonegoro - East Java, we are one step closer to be near with the local bird’s nest farmer. This strategic position implies to fresh raw ingredients and stable supply from local farmers.</p> #}	
+						{% else %}
+						<h3>We built our reputations as nation leading Bird’s Nest processing factory since 1979.</h3>
+						<h6>PT. Abadi Lestari offers its customers a wide range of Bird’s Nest quality products, all of them are processed at the highest grade of processing quality. Our workshop at Bojonegoro - East Java bring us closer to the local bird’s nest farmer. This positioning strategy has an effect on fresh raw ingredients and stable supplies from local farmers.</h6>
+						{# <p>This strategic position implies to fresh raw ingredients and stable supply from local farmers. PT. Abadi Lestari offers its customers a wide range of Bird’s Nest product quality, all of them are processed at the highest grade of processing quality. With our workshop at Bojonegoro - East Java, we are one step closer to be near with the local bird’s nest farmer. This strategic position implies to fresh raw ingredients and stable supply from local farmers.</p> #}
+						{% endif %}
+					</div>
+					<div class="col-lg-3 col-md-2"></div>
+				</div>
+				<div class="clear height-45"></div>
+				<div class="row featured_banner">
+					<div class="col-md-6 col-sm-6">
+						<div class="picture"><img src="{{ app.request.baseurl }}/asset/images/pict-about-1.jpg" alt="" class="img-responsive center-block"></div>
+					</div>
+					<div class="col-md-6 col-sm-6">
+						<div class="picture"><img src="{{ app.request.baseurl }}/asset/images/pict-about-2.jpg" alt="" class="img-responsive center-block"></div>
+					</div>
+				</div>
+				<div class="clear height-50"></div>
+				<div class="clear height-50"></div>
+				<div class="clear height-5"></div>
+				<div class="row text-center">
+					<div class="col-md-2"></div>
+					<div class="col-md-8">
+						{% if lang_active == 'ch' %}
+						<h3>卓越运营</h3>
+						<h6>拥有高度自我意识的经验丰富的人力资源领导团队。</h6>
+						<p>在我们的日常运营中，我们为世界市场创造卓越标准的精神所推动，我们以公司的愿景和使命，以我们的文化为指导，在公司内做所有事情：<br>
+						<b>“我们每天都变得更好”。</b></p>
+						{% else %}
+						<h3>Operating Excellence</h3>
+						<h6>A leading team of experienced human resources with high self-consciousness.</h6>
+						<p>Within our day-to-day operation, we are fueled by the spirit of creating excellent standard for the world market and we do everything in the company guided by the company’s vision and mission, with our culture: <br>
+						<b>“We’re better every day”.</b></p>
+						{% endif %}
+					</div>
+					<div class="col-md-2"></div>
+				</div>
+				<div class="clear"></div><div class="h420"></div>
+				
+				<div class="clear"></div>
+			</div>
+		</div>
+	</section>
+
+	<section class="default_sc content-inside l-content-2" id="about">
+		<div class="prelatife container">
+			<div class="insidesn">
+				<div class="blocksn_video_about">
+					<div class="frame">
+						<!-- <img src="{{ app.request.baseurl }}/asset/images/pict-about-3_coverVideo.jpg" alt="" class="img-responsive center-block">
+						<div class="floats_button">
+							<div class="buttons"></div>
+						</div> -->
+						<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='https://www.youtube.com/embed/kXuHtJYg_To' frameborder='0' allowfullscreen></iframe></div>
+					</div>
+				</div>
+				<div class="height-130"></div>
+				
+				<div class="row block-text-vision_mission">
+					<div class="col-md-6 col-sm-6 border-right">
+						<div class="texts">
+							{% if lang_active == 'ch' %}
+							<h4>我们愿景</h4>
+							<p>成为一家生产优质燕窝产品公司，并且成为在国际市场最受公认的燕窝产品。</p>	
+							{% else %}
+							<h4>Vision</h4>
+							<p>Become an edible swallow nest producing company that is known for its’ high quality, becoming the best and recognized in the international market.</p>
+							{% endif %}
+						</div>
+					</div>
+					<div class="col-md-6 col-sm-6">
+						<div class="texts">
+							{% if lang_active == 'ch' %}
+							<h4>我们使命</h4>
+							<ul class="list-unstyled">
+								<li>通过良好的过程生产对身体健康并无害优质的燕窝产品。</li>
+								<li>推行喝可食用燕窝对身体的好处</li>
+								<li>增加以及开发客户</li>
+								<li>录用、培养、与奖励在工作场所贡献突出者。</li>
+								<li>积极为人民大众谋福祉</li>
+							</ul>	
+							{% else %}
+							<h4>Mission</h4>
+							<ul class="list-unstyled">
+								<li>Produce healthy, safe, hygienic, and quality edible bird nest (EBN) from quality raw materials and well controlled processes.</li>
+								<li>Introduce the benefits and benefits of edible bird nest products (Edible Bird Nest / EBN).</li>
+								<li>Improve and develop customer base.</li>
+								<li>Recruit, develop, and reward professional workers who excel in the workplace.</li>
+								<li>Actively contribute to the welfare of the community.</li>
+							</ul>
+							{% endif %}
+						</div>
+					</div>
+				</div>
+				<div class="clear"></div>
+			</div>
+		</div>
+	</section>
+
+</div>
+{% endblock %}

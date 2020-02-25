@@ -1,0 +1,99 @@
+{% extends layout %}
+{% block title %}{% endblock %}
+{% block menu %}homepage{% endblock %}
+{% block content %}
+<section class="default_sc" id="inside_page_casestudy">
+	<div class="clear height-50"></div>
+	<div class="clear height-50"></div>
+	<div class="clear height-10"></div>
+	<div class="prelatife container">
+		<div class="row default conts_block_caseStudy">
+			<div class="col-md-4">
+				<div class="lefts_cont">
+					<h3 class="sub_title">Case Studies</h3>
+					<div class="clear height-30"></div>
+					<div class="block_menuleft">
+						<ul class="list-unstyled">
+							<li {% if active_id == 1 or active_id == 0 %}class="active"{% endif %}><a href="{{ path('case_study', {'id': 1}) }}">Automotive</a></li>
+							<li {% if active_id == 2 %}class="active"{% endif %}><a href="{{ path('case_study', {'id': 2}) }}">Aviation / Aerospace</a></li>
+							<li {% if active_id == 3 %}class="active"{% endif %}><a href="{{ path('case_study', {'id': 3}) }}">Banks</a></li>
+							<li {% if active_id == 4 %}class="active"{% endif %}><a href="{{ path('case_study', {'id': 4}) }}">Electronics</a></li>
+							<li {% if active_id == 5 %}class="active"{% endif %}><a href="{{ path('case_study', {'id': 5}) }}">Food Industry</a></li>
+							<li {% if active_id == 6 %}class="active"{% endif %}><a href="{{ path('case_study', {'id': 6}) }}">Medical</a></li>
+							<li {% if active_id == 7 %}class="active"{% endif %}><a href="{{ path('case_study', {'id': 7}) }}">Distribution Center</a></li>
+							<li {% if active_id == 8 %}class="active"{% endif %}><a href="{{ path('case_study', {'id': 8}) }}">Metal Industry</a></li>
+							<li {% if active_id == 9 %}class="active"{% endif %}><a href="{{ path('case_study', {'id': 9}) }}">Furniture</a></li>
+							<li {% if active_id == 10 %}class="active"{% endif %}><a href="{{ path('case_study', {'id': 10}) }}">Logistics</a></li>
+							<li {% if active_id == 11 %}class="active"{% endif %}><a href="{{ path('case_study', {'id': 11}) }}">Administration</a></li>
+							<li {% if active_id == 12 %}class="active"{% endif %}><a href="{{ path('case_study', {'id': 12}) }}">Oil and Gas Industry</a></li>
+						</ul>
+					</div>
+					<div class="clear"></div>
+				</div>
+			</div>
+			<div class="col-md-8">
+				<div class="rights_cont">
+					
+					<div class="mw675">
+						{# <h2 class="title_s">Automotive Solution by H&auml;nel</h2>
+						<h6>Increased efficiency with the H&auml;nel Lean-Lift&reg;</h6>
+						<img src="asset/images/pict-case-1.jpg" alt="" class="img-responsive">
+						<p><strong>Case Study: #1 Cochran Automotive, Robinson Township, Pennsylvania</strong></p>
+
+						<p>In 2011 and 2012, Cochran completely renovated its Buick/GMC dealership in Robinson Township, Pennsylvania. The goal was to improve efficiency and the appearance of the dealership to make the customer experience more appealing.</p>
+
+						<p>The new showroom created more space for the parts department and additional repair shop bays so that the range of services could be expanded. For better utilization of space in the building, Cochran decided to install a H&auml;nel Lean-Lift&reg;. The Lean-Lift&reg; was integrated in the existing structure so that no building modifications were necessary.</p>
+
+						<p><strong>The result speaks for itself!</strong></p>
+
+						<p>The parts and service area is now a bright, neat and convenient workplace. Customers are served quickly and efficiently at separate sales counters. Another counter provides the parts needed in the service center.<br />
+						Most of the parts in stock are available at the push of a button. Climbing steps and lengthy searches to retrieve parts are things of the past.</p>
+
+						<p><strong>More and more car dealerships in the United States are profiting from H&auml;nel solutions!</strong></p>
+						<div class="row">
+							<div class="col-md-6 col-sm-6">
+								<img src="asset/images/auto-12.jpg" alt="" class="img-responsive">
+							</div>
+							<div class="col-md-6 col-sm-6">
+								<img src="asset/images/auto-13.jpg" alt="" class="img-responsive">
+							</div>
+						</div> #}
+						{{ model.texts|raw }}
+						{# end data #}
+
+						{% if active_id == 2 %}
+						<div class="clear height-5"></div>
+						 <a href="#" class="btn btn-link btns_down_pdf">
+						 	<p>
+						 	<img src="{{ app.request.baseurl }}/asset/images/icn_brochure_nf.jpg" alt="" class="img-responsive d-inline">
+						 	<b>Download</b><br>
+						 	Hanel for Aviation brochure</p>
+						 </a>
+						<div class="clear"></div>
+						{% endif %}
+
+						<div class="clear height-30"></div>
+						<div class="row default nav_pagin">
+							<div class="col-md-6 col-sm-6 col-xs-6">
+									<a href="{{ path('homepage') }}" class="btn btn-link"><img src="asset/images/btn_lefts-hanelSetc.png" alt="" class="d-inline"> &nbsp;Back to H&auml;nel main page</a>
+							</div>
+							<div class="col-md-6 col-sm-6 col-xs-6 text-right">
+								{% if next %}
+									<a href="{{ path('case_study', {'id': next}) }}" class="btn btn-link">Next Case Studies&nbsp; <img src="asset/images/btn_rights-hanelSetc.png" alt="" class="d-inline"></a>
+								{% else %}
+									<a href="javascript:;" class="btn btn-link">Next Case Studies&nbsp; <img src="asset/images/btn_rights-hanelSetc.png" alt="" class="d-inline"></a>
+								{% endif %}
+							</div>
+						</div>
+
+						<div class="clear"></div>
+					</div>
+					{# end right cont #}
+
+				</div>
+			</div>
+		</div>
+		<div class="clear"></div>
+	</div>
+</section>
+{% endblock %}

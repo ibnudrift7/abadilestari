@@ -1,0 +1,84 @@
+{% extends 'layouts/main.twig' %}
+{% block maincontent %}
+<body data-spy="scroll" id="page-top">
+		<div class="wrapper prelatif h100per">
+			<div class="block-wrap-fcss-top-conhome prelatife h100per">
+				{% include "/layouts/header.twig" with { 'menu': block('menu') } %}
+
+				<div id="carousel-example-fcs" class="full_slide_screen carousel fade" data-ride="carousel">
+				  <ol class="carousel-indicators">
+				    <li data-target="#carousel-example-fcs" data-slide-to="0" class="active"></li>
+				  </ol>
+
+				  <div class="carousel-inner" role="listbox">
+				    <div class="item active">
+				      <img src="{{ app.request.baseurl }}/asset/images/fcs/fcs-1.jpg">
+				      <div class="carousel-caption">
+					      <div class="outers-block-top-wrapfcs">
+								<div class="prelatife container">
+									<div class="block-navs-customs-sn">
+										<a href="#" class="lefts_btn" href="#carousel-example-fcs" role="button" data-slide="prev"></a>
+										<a href="#" class="rights_btn" href="#carousel-example-fcs" role="button" data-slide="next"></a>
+									</div>
+									<div class="block_customs_textfcs">
+										<div class="insides text-center">
+											{% if lang_active == 'ch' %}
+											<span class="sub-title">PT. ABADI LESTARI - 他是印度尼西亚高等级鸟类的标准品</span>
+											<div class="clear height-10"></div>
+											<p>精选周密，有现代感的技术，创新方法与为客户献身的人力资源是我们公司的竞争力。</p>	
+											{% else %}
+											<span class="sub-title">PT. ABADI LESTARI - THE STANDARD FOR HIGH GRADE BIRD&rsquo;S NEST FROM INDONESIA</span>
+											<div class="clear height-10"></div>
+											<p>Our competitivenes lies at the very carefull selection of our raw ingredients, our modern techniques, our innovative methods and our dedicated human resources.</p>
+												
+											{% endif %}
+
+											<div class="clear"></div>
+										</div>
+									</div>
+								</div>
+								<div class="clear"></div>
+							</div>
+						</div>
+				    </div>
+
+				  </div>
+				</div>
+
+				<div class="clear"></div>
+			</div>
+			{% block content %}{% endblock %}
+			
+			{% include "/layouts/footer.twig" %}
+		</div>
+		<script type="text/javascript">
+		if ( $(window).width() > 769 ) {
+			var $item = $('.full_slide_screen.carousel .item'); 
+			var $wHeight = $(window).height();
+			$item.eq(0).addClass('active');
+			$item.height($wHeight); 
+			$item.addClass('full-screen');
+
+			$('.full_slide_screen.carousel img').each(function() {
+			  var $src = $(this).attr('src');
+			  var $color = $(this).attr('data-color');
+			  $(this).parent().css({
+			    'background-image' : 'url(' + $src + ')',
+			    'background-color' : $color
+			  });
+			  $(this).remove();
+			});
+
+			$(window).on('resize', function (){
+			  $wHeight = $(window).height();
+			  $item.height($wHeight);
+			});
+
+			$('.full_slide_screen.carousel').carousel({
+			  interval: 6000,
+			  pause: "false"
+			});
+		}
+		</script>
+</body>
+{% endblock %}

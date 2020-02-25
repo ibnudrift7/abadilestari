@@ -1,0 +1,87 @@
+{% extends layout %}
+{% block title %}{{ lang_message.process|raw }} - {% endblock %}
+{% block menu %}process{% endblock %}
+{% block content %}
+<div class="outers_cont_inside_page back-white">
+
+	<h1 style="visibilty: none; display:none;">{{ lang_message.process|raw }} - {{ app_name }}</h1>
+	<div class="insides_toppage_blocks">
+		<div class="blocks_bottom_intop_page pg_about prelatife">
+			<img src="{{ app.request.baseurl }}/asset/images/ill-about.jpg" alt="" class="img-responsive illustration_inside">
+			<div class="insides">
+				<div class="prelatife container">
+					<div class="blocks_top_ill">
+						<h2 class="title_page">{{ lang_message.process|raw }}</h2>
+						{% if lang_active == 'ch' %}
+						<p>怎么PT。 ABADI LESTARI实现最高的鸟巢质量在于我们如何做到整个过程。</p>
+						{% else %}
+						<p>How PT. ABADI LESTARI achieve the highest Bird’s Nest quality lies in how we do the whole process.</p>
+						{% endif %}
+					</div>
+				</div>				
+				<div class="clear"></div>
+			</div>
+		</div>
+	</div>
+	
+	<section class="default_sc content-inside l-content-1" id="about">
+		<div class="blocks-outer-breadcrumbs">
+			<div class="prelatife container">
+				<div class="row">
+					<div class="col-md-6 col-sm-7 col-xs-9">
+						{% if lang_active == 'ch' %}
+						<ol class="breadcrumb">
+						  <li><a href="#">家</a></li>
+						  <li class="active">{{ lang_message.process|raw }}</li>
+						</ol>	
+						{% else %}
+						<ol class="breadcrumb">
+						  <li><a href="#">Home</a></li>
+						  <li class="active">Our Process</li>
+						</ol>
+						{% endif %}
+						<div class="clear"></div>
+					</div>
+					<div class="col-md-6 col-sm-5 col-xs-3">
+						<div class="text-right backs_pagesn"><a href="#">{{ lang_message.back|raw }}</a></div>
+					</div>
+				</div>
+				<div class="clear"></div>
+			</div>
+		</div>
+		<div class="container prelatife midles-content">
+			<div class="content-text text-center">
+				<div class="maw870 tengah">
+					{% if lang_active == 'ch' %}
+					<h3>我们永远不停地改善能增加产品价值的设施。</h3>
+					<p>有限公司是生产可食用的燕窝产品。使用的技术由加热与低温储存方式。我们公司的主要生产过程包括洗涤、变干、低温储存、加热和包装（使用真或不真空包装技术）。</p>
+					<p>燕窝产品的储存方式是在一间温度被控制的。 是我们的承诺让产品的包装与运输过程到客户手中质量依然好。</p>
+					{% else %}
+					<h3>We never stop investing in facilities that will add value to our products.</h3>
+					<p>PT ALI's process activity is producing consumable bird nest (EBN). The technology used consists of heating and storage technology in cold temperatures. The process of producing an edible bird's nest (EBN) consists of the main stages of cleaning, drying, storage in cold temperatures, heating, and packaging with vaccum and non vacuum methods.</p>
+					<p>The storage process of EBN up to the storage of the final product is pursued in a room with controlled and dry temperature. The packaging and shipping process should be able to guarantee the quality of the product to the customer's hands.</p>
+					{% endif %}
+					<div class="clear"></div>
+				</div>
+				<div class="clear height-40"></div>	
+
+				<div class="maw982 tengah list-featured-process">
+					<div class="row">
+						{% for i in 1..3 %}
+						<div class="col-md-4">
+							<div class="picture"><img src="{{ app.request.baseurl }}/asset/images/banner-process-{{ i }}.jpg" alt="" class="img-responsive"></div>
+						</div>
+						{% endfor %}
+					</div>
+					<div class="clearf"></div>
+				</div>
+
+				<div class="clear height-50"></div>
+				<div class="clear height-50"></div>
+				<div class="clear"></div>
+			</div>
+		</div>
+	</section>
+
+</div>
+{% endblock %}

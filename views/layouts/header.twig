@@ -1,0 +1,243 @@
+<header class="head {% if menu == 'homepage' %}homep{% endif %} {% if menu != 'homepage' %}inside{% endif %}">
+	<div class="outers-back-header padding-top-30">
+		<div class="container head_cont">
+			<div class="row">
+				<div class="col-md-4 col-sm-4 col-xs-3 text-left">
+					<div class="blocksn_head_buttonMenu d-inline">
+						<a href="#" class="showmenu_barresponsive"><i class="fa fa-bars"></i></a>
+					</div>
+					<div class="txt_language text-left d-inline padding-left-20 padding-top-15 hidden-onmobile">
+						Language&nbsp;
+						{% if menu == 'products' %}
+						<a class="{% if lang_active == 'en' %}active{% endif %}" href="{{ current_page_name }}&lang=en">English</a>
+						&nbsp;|&nbsp;
+						<a class="{% if lang_active == 'ch' %}active{% endif %}" href="{{ current_page_name }}&lang=ch">China</a>	
+						{% else %}
+						<a class="{% if lang_active == 'en' %}active{% endif %}" href="{{ current_page_name }}?lang=en">English</a>
+						&nbsp;|&nbsp;
+						<a class="{% if lang_active == 'ch' %}active{% endif %}" href="{{ current_page_name }}?lang=ch">China</a>
+						{% endif %}
+					</div>
+				</div>
+				<div class="col-md-4 col-sm-4 col-xs-9">
+					<div class="center-block text-center logo-block-head"><a href="#"><img src="{{ app.request.baseurl }}/asset/images/logo-abadi-lestari.svg" alt="logo abadi lestari" class="img-responsive center-block"></a></div>
+				</div>
+				<div class="col-md-4 col-sm-4 hidden-xs text-right">
+					<div class="info-headers d-inline text-right">
+						<span class="d-inline">Hotline</span>
+						&nbsp;<i class="icons-phone"></i>&nbsp;&nbsp;+62 353 3234445
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</header>
+
+
+<div class="outer-blok-black-menuresponss-hides">
+    <div class="prelatife">
+        <div class="clear height-45"></div>
+        <div class="margin-left-40">
+            <div class="hidesmenu-frightd"><a href="#" class="closemrespobtn"><img src="{{ app.request.baseurl }}/asset/images/back-bt-shidemenuw.png" alt=""></a></div>
+        </div>
+        <div class="clear height-50"></div><div class="height-20"></div>
+        <div class="lgosn_center-logo text-center"><a href="{{ path('homepage') }}"><img src="{{ app.request.baseurl }}/asset/images/logos_design-menu.png" alt="" class="img-responsive center-block"></a></div>
+        <div class="clear height-50"></div>
+        <div class="menu-sheader-datals">
+            <ul class="list-unstyled">
+                <li><a href="{{ path('homepage', {lang: lang_active}) }}">{{ lang_message.home|raw }}</a></li>
+                <li><a href="{{ path('about', {lang: lang_active}) }}">{{ lang_message.about|raw }}</a></li>
+                <li><a href="{{ path('process', {lang: lang_active}) }}">{{ lang_message.process|raw }}</a></li>
+                <li><a href="{{ path('facility', {lang: lang_active}) }}">{{ lang_message.facility|raw }}</a></li>
+                <li><a href="{{ path('contact', {lang: lang_active}) }}">{{ lang_message.contact|raw }}</a></li>
+            </ul>
+        </div>
+        <div class="clear height-40"></div>
+        <div class="hidden-xs viewsn_phoneinfo_headr text-center">
+        	{% if lang_active == 'en' %}
+        	<span>OUR HOTLINE</span>
+        	{% else %}
+        	<span>我们的热线</span>        		
+        	{% endif %}
+        	<div class="clear"></div>
+        	<div class="tx">
+        		<i class="fa fa-phone"></i>&nbsp;&nbsp;+62 353 3234445
+        		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        		<a href="mailto:witny.widjaja@nidina.net"><i class="fa fa-envelope-o"></i>&nbsp;&nbsp;witny.widjaja@nidina.net</a>
+        		<div class="clear"></div>
+        	</div>
+        	<div class="clear"></div>
+        </div>
+        <div class="clear height-20"></div>
+        <div class="txt_language c_white text-center d-inline padding-left-20 padding-top-15">
+			Language&nbsp;
+			{% if menu == 'products' %}
+			<a class="{% if lang_active == 'en' %}active{% endif %}" href="{{ current_page_name }}&lang=en">English</a>
+			&nbsp;|&nbsp;
+			<a class="{% if lang_active == 'ch' %}active{% endif %}" href="{{ current_page_name }}&lang=ch">China</a>	
+			{% else %}
+			<a class="{% if lang_active == 'en' %}active{% endif %}" href="{{ current_page_name }}?lang=en">English</a>
+			&nbsp;|&nbsp;
+			<a class="{% if lang_active == 'ch' %}active{% endif %}" href="{{ current_page_name }}?lang=ch">China</a>
+			{% endif %}
+		</div>
+
+        
+        <div class="clear"></div>
+    </div>
+    <div class="clear"></div>
+</div>
+
+
+<script type="text/javascript">
+    $(function(){
+        // show and hide menu responsive
+        $('a.showmenu_barresponsive').live('click', function() {
+            $('.outer-blok-black-menuresponss-hides').slideToggle();
+            return false;
+        });
+        $('a.closemrespobtn').live('click', function() {
+            $('.outer-blok-black-menuresponss-hides').slideUp('slow');
+            return false;
+        });
+    });
+</script>
+
+	{#
+	<header class="head hide hidden {% if menu == 'homepage' %}homep{% endif %} {% if menu != 'homepage' %}inside{% endif %}">
+		<div class="outers-back-header">
+			<div class="tops_header padding-top-50">
+				<div class="prelatife container">
+					<div class="clear height-5"></div>
+					<div class="row">
+						<div class="col-md-6">
+							<div class="logo-head"><a href="#"><img src="{{ app.request.baseurl }}/asset/images/lgo-headers-mahamerunw.png" alt="logo" class="img-responsive"></a></div>
+						</div>
+						<div class="col-md-6">
+							<div class="rights-info">
+								<div class="in_text">
+									<div class="topsn_language">
+										<span class="d-inline text-left">How can I assist you?</span>
+										<span class="d-inline text-right change_lang">
+											LANGUAGE: &nbsp;&nbsp;
+											<a class="active" href="#">EN</a> &nbsp;|&nbsp; 
+											<a href="#">IN</a>
+										</span>
+									</div>
+									<div class="lines"></div>
+									<div class="info_head">
+										<span class="d-inline">
+											<i class="fa fa-phone"></i> &nbsp;&nbsp;+62 31 51503200
+										</span>
+										&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+										<span class="d-inline">
+											<i class="fa fa-envelope-o"></i> &nbsp;&nbsp;info@mahamerumachines.com
+										</span>
+									</div>
+								</div>
+								<div class="posn_abs_human">
+									<img src="{{ app.request.baseurl }}/asset/images/pictsn_human_picright_head.png" alt="" class="img-responsive">
+								</div>
+								<div class="clear"></div>
+							</div>
+						</div>
+					</div>
+					
+					<div class="clear"></div>
+				</div>
+			</div>
+			<div class="navigation-blocks">
+				<div class="prelatife container">
+					<div class="top-menu">
+						<ul class="list-inline">
+							<li class="active"><a href="#">HOME</a></li>
+							<li><a href="#">About</a></li>
+							<li><a href="#">VERTICAL PACKAGING MACHINES</a></li>
+							<li><a href="#">PART & ACCESSORIES</a></li>
+							<li><a href="#">QUALITY & AFTER SALES SERVICE</a></li>
+							<li><a href="#">Contact</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="clear"></div>
+			</div>
+		<div class="clear"></div>
+		</div>
+	</header>
+	#}
+
+<script type="text/javascript">
+	$(function(){
+		var swidth = $(window).width();
+		if (swidth > 1024){
+			var lastScrollTop = 230;
+			$(window).scroll(function(event){
+			   var st = $(this).scrollTop();
+			   if (st > lastScrollTop){
+			       // $('body').addClass('morph');
+			   } else {
+			      // $('body').removeClass('morph');/*/
+			   }
+			   
+			   // console.log(st);
+			   // lastScrollTop = st;
+			});
+		}
+	});
+</script>
+
+
+<script type="text/javascript">
+  $(function(){
+    var s_width = $(window).width();
+    if (s_width > 1024){
+      $('.header-affixs').affix({
+        offset: {
+          top: 250,
+        }
+      });
+    }
+  });
+</script>
+
+<section id="myAffix" class="header-affixs">
+	<div class="clear height-15"></div>
+	<div class="prelatife container">
+		<div class="row">
+			<div class="col-md-3 col-sm-3">
+				<div class="lgo_web_headrs_wb">
+					<a href="{{ path('homepage') }}">
+						<img src="{{ app.request.baseurl }}/asset/images/logo-heads.jpg" alt="logo header" class="img-responsive">
+					</a>
+				</div>
+			</div>
+			<div class="col-md-9 col-sm-9">
+				<div class="text-right"> 
+					<div class="clear height-10"></div>
+					<div class="menu-taffix d-inline">
+						<ul class="list-inline d-inline">
+							<li><a href="{{ path('homepage', {lang: lang_active}) }}">{{ lang_message.home|raw }}</a></li>
+			                <li><a href="{{ path('about', {lang: lang_active}) }}">{{ lang_message.about|raw }}</a></li>
+			                <li><a href="{{ path('process', {lang: lang_active}) }}">{{ lang_message.process|raw }}</a></li>
+			                <li><a href="{{ path('facility', {lang: lang_active}) }}">{{ lang_message.facility|raw }}</a></li>
+			                <li><a href="{{ path('contact', {lang: lang_active}) }}">{{ lang_message.contact|raw }}</a></li>
+						</ul>
+					</div>
+					<div class="txt_language text-right d-inline padding-left-20">
+						Language&nbsp;
+						{% if menu == 'products' %}
+						<a class="{% if lang_active == 'en' %}active{% endif %}" href="{{ current_page_name }}&lang=en">English</a>
+						&nbsp;|&nbsp;
+						<a class="{% if lang_active == 'ch' %}active{% endif %}" href="{{ current_page_name }}&lang=ch">China</a>	
+						{% else %}
+						<a class="{% if lang_active == 'en' %}active{% endif %}" href="{{ current_page_name }}?lang=en">English</a>
+						&nbsp;|&nbsp;
+						<a class="{% if lang_active == 'ch' %}active{% endif %}" href="{{ current_page_name }}?lang=ch">China</a>
+						{% endif %}
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="clear"></div>
+	</div>
+</section>

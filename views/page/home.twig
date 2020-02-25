@@ -1,0 +1,133 @@
+{% extends layout %}
+{% block title %}{% endblock %}
+{% block menu %}homepage{% endblock %}
+{% block content %}
+
+<section class="default_sc about-company-home" id="homes_cn_section1">
+	<div class="prelatife container">
+		<div class="insides">
+			<div class="blocksn_video_about homepage">
+				<div class="frame">
+					<!-- <img src="{{ app.request.baseurl }}/asset/images/pict-about-3_coverVideo.jpg" alt="" class="img-responsive center-block">
+					<div class="floats_button">
+						<div class="buttons"></div>
+					</div> -->
+					<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='https://www.youtube.com/embed/kXuHtJYg_To' frameborder='0' allowfullscreen></iframe></div>
+				</div>
+			</div>
+			<div class="clear height-50"></div>
+			<div class="clear height-35"></div>
+			
+			<div class="row">
+				<div class="col-md-6">
+					<div class="text-cont textn-left">
+						{% if lang_active == 'ch' %}
+						<h4 class="subs-title">ABADI LESTARI 关于</h4>
+						<div class="clear"></div>
+						<h3>自1979年以来，我们建立了国家领先的鸟巢加工厂的声誉。</h3>
+						<p>PT Abadi Lestari Indonesia 有限公司为客户提供各种优质燕窝产品，所有的产品通过高标准过程生产出来。我们的工厂是位于东爪哇，Bojonegoro市，其位置对我们来看占有战略性的地位，一方面我们离当地燕窝农民近，另一方面也缩短距离收获又好又稳定的原料。</p>
+						<div class="clear height-25"></div>
+						<a href="{{ path('about') }}" class="btn btn-default btns_submn-green1">了解我们的更多信息</a>
+						&nbsp;&nbsp;&nbsp;
+						<a href="{{ path('contact') }}" class="btn btn-default btns_submn-green2">提交询问</a>
+
+						{% else %}
+						<h4 class="subs-title">ABOUT ABADI LESTARI</h4>
+						<div class="clear"></div>
+						<h3>We built our reputations as nation leading Bird&rsquo;s Nest processing factory since 1979.</h3>
+						<p>PT. Abadi Lestari offers its customers a wide range of Bird&rsquo;s Nest product quality, all of them are processed at the highest grade of processing quality. With our workshop at Bojonegoro - East Java, we are one step closer to be near with the local bird’s nest farmer. This strategic position implies to fresh raw ingredients and stable supply from local farmers. </p>	
+						<div class="clear height-25"></div>
+						<a href="{{ path('about') }}" class="btn btn-default btns_submn-green1">Learn More About Us</a>
+						&nbsp;&nbsp;&nbsp;
+						<a href="{{ path('contact') }}" class="btn btn-default btns_submn-green2">Submit An Inquiry</a>
+						{% endif %}
+						
+						<div class="clear"></div>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="pictures"><img src="{{ app.request.baseurl }}/asset/images/sections_bnr1-home.png" alt="" class="img-responsive center-block"></div>
+				</div>
+			</div>
+
+
+
+			<div class="clear"></div>
+		</div>
+	</div>
+</section>
+
+<section class="default_sc shortcut-blocknsprod-home" id="homes_cn_section2">
+	<div class="prelatife container">
+		<div class="insides">
+
+			<div class="blocksn-lists-dshortcut">
+				<div class="row default">
+					<div class="col-md-6 col-sm-6">
+						<div class="items">
+							<div class="picture"><a href="{{ path('process') }}"><img src="{{ app.request.baseurl }}/asset/images/shortcuts-prd-home-1.jpg" alt="" class="img-responsive"></a></div>
+							<div class="infos">
+								{% if lang_active == 'ch' %}
+								<span class="sub-text">产品介绍</span>
+								<h3>高品质产品，适用于苛刻的世界市场</h3>
+								{% else %}
+								<span class="sub-text">OUR PRODUCTS</span>
+								<h3>High quality products for a demanding world market</h3>
+								{% endif %}
+								<div class="clear"></div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-6 col-sm-6">
+						<div class="items">
+							<div class="picture"><a href="{{ path('facility') }}"><img src="{{ app.request.baseurl }}/asset/images/shortcuts-prd-home-2.jpg" alt="" class="img-responsive"></a></div>
+							<div class="infos">
+								{% if lang_active == 'ch' %}
+								<span class="sub-text">设施</span>
+								<h3>我们的现代化设施和人力资源</h3>
+								{% else %}
+								<span class="sub-text">PRODUCTION FACILITY</span>
+								<h3>Our modern facilities and our human resources</h3>
+								{% endif %}
+								<div class="clear"></div>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+
+			<div class="clear"></div>
+		</div>
+	</div>
+</section>
+
+<section class="default_sc blocksn-bottomsGreen-snlu" id="homes_cn_section3">
+	<div class="prelatife container">
+		<div class="insides">
+			{% if lang_active == 'ch' %}
+			<div class="text-cont text-center">
+				<h3>我们只生产优质产品<br>我们公司能保证无论原料或终燕窝产品都是优质的。</h3>
+				<p>是我们公司的承诺保证十分周密的测试，这就是我们价值观为客户给最好的产品。我们将能力和奉献精神进行研发生产具有竞争力和吸引力的产品。</p>
+				<div class="clear"></div>
+			</div>	
+			{% else %}
+			<div class="text-cont text-center">
+				<h3>We only bring high quality grade<br>Bird’s Nest with quality assurance from<br>raw materials to the end product.</h3>
+				<p>It is our culture to only bring our customers the best quality products. Our company promise to bring meticulously tested quality together with guaranteed traceable products. We put competence and dedication in the areas of research and development to bring attractive and competitive product variations. </p>
+				<div class="clear"></div>
+			</div>
+			{% endif %}
+			<div class="clear"></div>
+		</div>
+	</div>
+</section>
+
+
+<script type="text/javascript">
+	$(document).ready(function(){
+		// var sheight = $('.blocks_list_solutions_home .items .picture').height();
+		// $('.blocks_list_solutions_home .items').find('.col-md-6').css('height', sheight+'px');
+	});
+</script>
+{% endblock %}

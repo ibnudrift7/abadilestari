@@ -1,0 +1,151 @@
+<div class="header posfull-abs">
+	<!-- /. Header -->
+	<header class="head {% if menu == 'homepage' %}homep{% endif %} {% if menu != 'homepage' %}inside{% endif %}">
+		<div class="container prelatife">
+			<div class="outers-back-header">
+					<div class="row hidden-xs hidden-sm">
+						<div class="col-lg-5 col-md-5">
+							<div class="lgo_web_header_lg">
+								<a href="{{ url('homepage') }}">
+									<img src="{{ app.request.baseurl }}/asset/images/lgo_hanel_headers-pict.jpg" alt="logo header - hanel" class="img-responsive pic_home">
+									<img src="{{ app.request.baseurl }}/asset/images/lgo-hanel-headers_wht.png" alt="logo header - hanel" class="img-responsive pic_insidep">
+								</a>
+							</div>
+						</div>
+						<div class="col-lg-7 col-md-7">
+							<div class="clear"></div>
+						</div>
+					</div>
+					
+					<div class="visible-xs visible-sm">
+		                <nav class="navbar navbar-default">
+						  <div class="container-fluid">
+						    <div class="navbar-header">
+						      {# <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+						        <span class="sr-only">Toggle navigation</span>
+						        <span class="icon-bar"></span>
+						        <span class="icon-bar"></span>
+						        <span class="icon-bar"></span>
+						      </button> #}
+						      <a class="navbar-brand" href="{{ path('homepage') }}"><img src="{{ app.request.baseurl }}/asset/images/lgo-hanel-headers_wht.png" alt="logo" class="img-responsive"></a>
+						    </div>
+
+						    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+						      <ul class="nav navbar-nav">
+						      	<li><a href="{{ path('homepage') }}" >Home</a></li>
+				            	<li><a href="{{ path('homepage') }}#home_c1" >Introduction</a></li>
+				            	<li><a href="{{ path('homepage') }}#home_white_cont2" >Why Hanel</a></li>
+				            	<li><a href="{{ path('homepage') }}#home_black_cont3" >Case Studies</a></li>
+				            	<li><a href="{{ path('homepage') }}#blocks_bottom_top_footer" >Contact</a></li>
+						      </ul>
+						    </div>
+						  </div>
+						</nav>
+						<div class="clear"></div>
+					</div>
+
+				<div class="clear"></div>
+			</div>
+			<div class="clear"></div>
+		</div>
+		<div class="clear"></div>
+		<div class="hdr_topBlock_menu">
+			<a href="javacript:;" class="btn btns_pmenu showmenu_barresponsive"><i class="fa fa-bars"></i></a>
+		</div>
+	</header>
+</div>
+
+<div class="outer-blok-black-menuresponss-hides" style="display: none;">
+    <div class="prelatife container">
+        <div class="clear height-45"></div>
+        <div class="fright">
+            <div class="hidesmenu-frightd"><a href="#" class="closemrespobtn"><img src="{{ app.request.baseurl }}/asset/images/back-bt-shidemenuw.png" alt=""></a></div>
+        </div>
+        <div class="clear height-50"></div><div class="height-30"></div>
+        <div class="menu-sheader-datals">
+            <ul class="list-unstyled">
+            	<li><a href="{{ path('homepage') }}" >Home</a></li>
+            	<li><a href="{{ path('homepage') }}#home_c1" >Introduction</a></li>
+            	<li><a href="{{ path('homepage') }}#home_white_cont2" >Why Hanel</a></li>
+            	<li><a href="{{ path('homepage') }}#home_black_cont3" >Case Studies</a></li>
+            	<li><a href="{{ path('homepage') }}#blocks_bottom_top_footer" >Contact</a></li>
+            </ul>
+        </div>
+        
+        <div class="clear"></div>
+    </div>
+    <div class="clear"></div>
+</div>
+
+<script type="text/javascript">
+    $(function(){
+        // show and hide menu responsive
+        $('a.showmenu_barresponsive').live('click', function() {
+            $('.outer-blok-black-menuresponss-hides').slideToggle('slow');
+            return false;
+        });
+        $('a.closemrespobtn').live('click', function() {
+            $('.outer-blok-black-menuresponss-hides').slideUp('slow');
+            return false;
+        });
+    })
+</script>
+
+
+
+<script type="text/javascript">
+	$(function(){
+		$('.views_dropdown_prd, .blocks_popupview_subMenu_header').mouseenter(function(){
+			$('.blocks_popupview_subMenu_header').fadeIn();
+			// return false;
+		});
+		
+		$('.blocks_popupview_subMenu_header').mouseleave(function(){
+			setTimeout(function(){ 
+				$('.blocks_popupview_subMenu_header').fadeOut();
+			}, 700);
+		});
+
+		// $('#myAffix').affix({
+		//   offset: {
+		//     top: 300,
+		//   }
+		// })
+	})
+</script>
+{# <section id="myAffix" class="header-affixs">
+	<div class="clear height-15"></div>
+	<div class="prelatife container">
+		<div class="row">
+			<div class="col-md-3 col-sm-3">
+				<div class="clear height-5"></div>
+				<div class="lgo_web_sitondi_">
+					<a href="{{ path('homepage') }}">
+						<img src="{{ app.request.baseurl }}/asset/images/lgo_web_header-responsive.png" alt="" style="max-width: 150px;">
+					</a>
+				</div>
+			</div>
+			<div class="col-md-9 col-sm-9">
+				<div class="text-right"> 
+					<div class="clear height-10"></div>
+					<div class="menu-taffix">
+						<ul class="list-inline d-inline">
+							<li class="{% if menu == 'homepage' %}active{% endif %}"><a href="{{ path('homepage') }}">HOME</a></li>
+							<li class="{% if menu == 'about' %}active{% endif %}"><a href="{{ path('about') }}">ABOUT</a></li>
+							<li class="{% if menu == 'product' %}active{% endif %}"><a href="{{ path('products') }}">PRODUCTS</a></li>
+							<li class="{% if menu == 'quality' %}active{% endif %}"><a href="{{ path('quality') }}">QUALITY</a></li>
+							<li class="{% if menu == 'contact' %}active{% endif %}"><a href="{{ path('contact') }}">CONTACT</a></li>
+							<li><a target="_blank" href="https://www.youtube.com/embed/{{ youtube_id }}?rel=0&autoplay=1">PROFILE VIDEO</a></li>
+						</ul>
+						<div class="txt_lang d-inline padding-left-20">
+							<a class="active" href="{{ app.request.baseurl }}">EN</a>
+							&nbsp;|&nbsp;
+							<a class="" href="{{ app.request.baseurl }}/id">ID</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="clear"></div>
+	</div>
+</section> #}

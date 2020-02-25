@@ -1,0 +1,156 @@
+{% extends layout %}
+{% block title %}{{ lang_message.facility_title|raw }} - {% endblock %}
+{% block menu %}facility{% endblock %}
+{% block content %}
+<div class="outers_cont_inside_page back-white">
+
+	<h1 style="visibilty: none; display:none;">{{ lang_message.facility_title|raw }} - {{ app_name }}</h1>
+	<div class="insides_toppage_blocks">
+		<div class="blocks_bottom_intop_page pg_about prelatife">
+			<img src="{{ app.request.baseurl }}/asset/images/ill-facility.jpg" alt="" class="img-responsive illustration_inside">
+			<div class="insides">
+				<div class="prelatife container">
+					<div class="blocks_top_ill">
+						<h2 class="title_page">{{ lang_message.facility_title|raw }}</h2>
+						{% if lang_active == 'ch' %}
+						<p>PT。 ABADI LESTARI鸟巢综合生产和加工支持设施</p>
+						{% else %}
+						<p>PT. ABADI LESTARI Bird’s Nest Comprehensive Production & Processing Support Facilities</p>
+						{% endif %}
+					</div>
+				</div>				
+				<div class="clear"></div>
+			</div>
+		</div>
+	</div>
+	
+	<section class="default_sc content-inside l-content-1" id="about">
+		<div class="blocks-outer-breadcrumbs">
+			<div class="prelatife container">
+				<div class="row">
+					<div class="col-md-6 col-sm-7 col-xs-9">
+						{% if lang_active == 'ch' %}
+						<ol class="breadcrumb">
+						  <li><a href="#">家</a></li>
+						  <li class="active">{{ lang_message.facility_title|raw }}</li>
+						</ol>	
+						{% else %}
+						<ol class="breadcrumb">
+						  <li><a href="#">Home</a></li>
+						  <li class="active">Our Facilities</li>
+						</ol>
+						{% endif %}
+						<div class="clear"></div>
+					</div>
+					<div class="col-md-6 col-sm-5 col-xs-3">
+						<div class="text-right backs_pagesn"><a href="#">{{ lang_message.back|raw }}</a></div>
+					</div>
+				</div>
+				<div class="clear"></div>
+			</div>
+		</div>
+		<div class="container prelatife midles-content">
+			<div class="content-text text-center">
+				<div class="maw850 tengah">
+					{% if lang_active == 'ch' %}
+					<h3>我们永远不停地改善能增加产品价值的设施。</h3>
+					<p>我们拥有最高标准以满足国际等级的全套专业加工设备。我们也由最先进洗涤设备其用料为最新的设施来包装最终燕窝产品。</p>
+					<p>有这些设施，我们相信能超越您期望，这样就能保证100%心满意足的您</p>
+					{% else %}
+					<h3>We never stop investing in facilities that <br> will add value to our products.</h3>
+					<p>We have a comprehensive sets of expert and advanced processing machineries to handle bird's nests processing operation at the highest standard to meet international quality products. We are equipped with the most advanced cleaning equipment and materials as well as the latest facility to pack the end products.</p>
+					<p>With these facilities, we are confident that we can exceed your expectations and offer <br>
+					<b>100% satisfaction guarantee.</b></p>
+					{% endif %}
+
+					<div class="clear"></div>
+				</div>
+				<div class="clear height-50"></div>	
+				<div class="clear height-10"></div>	
+
+				{# Start list featured #}
+				<div class="block-featured-facility text-left maw1085 tengah">
+					{% for ky, itm in facilities_data %}
+						{% for key, item in itm %}
+							{% if key == 0 %}
+							<div class="lists">
+								<div class="row default">
+									<div class="col-md-5">
+										<div class="description">
+											{% if lang_active == 'ch' %}
+											<h4>{{ item.titles_ch|title }}</h4>
+											<div class="clear height-20"></div>
+											<div class="lines"></div>
+											<div class="clear height-30"></div>
+											<p>{{ item.desc_ch|raw }}</p>
+											{% else %}
+											<h4>{{ item.titles|title }}</h4>
+											<div class="clear height-20"></div>
+											<div class="lines"></div>
+											<div class="clear height-30"></div>
+											<p>{{ item.desc|raw }}</p>
+											{% endif %}
+											<div class="clear"></div>
+										</div>
+									</div>
+									<div class="col-md-7">
+										<div class="picture"><img src="{{ app.request.baseurl }}/asset/images/{{ item.pict }}" alt="" class="img-responsive center-block"></div>
+									</div>
+								</div>
+							</div>
+							{% endif %}
+
+							{% if key == 1 %}
+							<div class="lists">
+								<div class="row default">
+									<div class="col-md-7">
+										<div class="picture"><img src="{{ app.request.baseurl }}/asset/images/{{ item.pict }}" alt="" class="img-responsive center-block"></div>
+									</div>
+									<div class="col-md-5">
+										<div class="description">
+											{% if lang_active == 'ch' %}
+											<h4>{{ item.titles_ch|title }}</h4>
+											<div class="clear height-20"></div>
+											<div class="lines"></div>
+											<div class="clear height-30"></div>
+											<p>{{ item.desc_ch|raw }}</p>
+											{% else %}
+											<h4>{{ item.titles|title }}</h4>
+											<div class="clear height-20"></div>
+											<div class="lines"></div>
+											<div class="clear height-30"></div>
+											<p>{{ item.desc|raw }}</p>
+											{% endif %}
+											<div class="clear"></div>
+										</div>
+									</div>
+								</div>
+							</div>
+							{% endif %}
+						{% endfor %}
+					{% endfor %}
+					<div class="clear"></div>
+				</div>
+				{# End list featured #}
+
+				<div class="clear height-50"></div>
+				<div class="clear height-50"></div>
+				<div class="clear"></div>
+			</div>
+		</div>
+	</section>
+
+</div>
+
+<script type="text/javascript">
+	$(window).load(function(){
+		if ($(window).width() > 769) {
+
+			var sheight = $(".block-featured-facility .lists .picture").height();
+			$(".block-featured-facility .lists .description").css('height', sheight+"px");
+			console.log(sheight);
+
+		}
+	});
+</script>
+{% endblock %}

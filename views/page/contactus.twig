@@ -1,0 +1,223 @@
+{% extends layout %}
+{% block title %}{{ lang_message.contact_title|raw }} - {% endblock %}
+{% block menu %}contact{% endblock %}
+{% block content %}
+<div class="outers_cont_inside_page back-white">
+
+	<h1 style="visibilty: none; display:none;">{{ lang_message.contact_title|raw }} - {{ app_name }}</h1>
+	<div class="insides_toppage_blocks">
+		<div class="blocks_bottom_intop_page pg_about prelatife">
+			<img src="{{ app.request.baseurl }}/asset/images/ill-contact.jpg" alt="" class="img-responsive illustration_inside">
+			<div class="insides">
+				<div class="prelatife container">
+					<div class="blocks_top_ill">
+						<h2 class="title_page">{{ lang_message.contact_title|raw }}</h2>
+						{% if lang_active == 'ch' %}
+						<p>PT。 ABADI LESTARI将随时准备回答任何问题 - 请随时与我们联系。</p>
+						{% else %}
+						<p>PT. ABADI LESTARI will be ready to answer to any inquiries - Don’t hesitate to contact us.</p>
+						{% endif %}
+					</div>
+				</div>				
+				<div class="clear"></div>
+			</div>
+		</div>
+	</div>
+	
+	<section class="default_sc content-inside l-content-1" id="about">
+		<div class="blocks-outer-breadcrumbs">
+			<div class="prelatife container">
+				<div class="row">
+					<div class="col-md-6 col-sm-7 col-xs-9">
+						{% if lang_active == 'ch' %}
+						<ol class="breadcrumb">
+						  <li><a href="#">家</a></li>
+						  <li class="active">联系</li>
+						</ol>	
+						{% else %}
+						<ol class="breadcrumb">
+						  <li><a href="#">Home</a></li>
+						  <li class="active">Our Contact</li>
+						</ol>
+						{% endif %}
+						<div class="clear"></div>
+					</div>
+					<div class="col-md-6 col-sm-5 col-xs-3">
+						<div class="text-right backs_pagesn"><a href="#">{{ lang_message.back|raw }}</a></div>
+					</div>
+				</div>
+				<div class="clear"></div>
+			</div>
+		</div>
+		<div class="container prelatife midles-content">
+			<div class="content-text text-center">
+				<div class="maw850 tengah">
+					{% if lang_active == 'ch' %}
+					<h3>工厂和办公室</h3>
+					{% else %}
+					<h3>Factory & Office</h3>
+					{% endif %}
+					<p>PT Abadi Lestari Indonesia<br>
+					Jl. Raya Bojonegoro – Babat<br>
+					RT. 007/RW.001<br>
+					Desa Balenrejo, Kecamatan Balen,<br>
+					Kabupaten Bojonegoro, Jawa Timur</p>
+
+					{# <p>Contact Person: Witny Widjaja<br>
+					Email: witny.widjaja@nidina.net</p> #}
+					<p>Email: info@abadilestariindonesia.com</p>
+					<div class="clear height-20"></div>
+					<div class="maps_location">
+						<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31666.84726534442!2d111.93853783541438!3d-7.20017221157844!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e778710da35f193%3A0x5180842cfccdf395!2sPT.+Abadi+Lestari+Indonesia!5e0!3m2!1sen!2sid!4v1530764382922' width='600' height='450' frameborder='0' style='border:0' allowfullscreen></iframe></div>
+						<div class="clear"></div>
+					</div>
+					<div class="clear height-30"></div>
+					<!-- <p><a href="https://goo.gl/maps/hsAVXgWMoAw" target="_blank"><i class="fa fa-map-marker"></i> &nbsp; View Map Location</a></p> -->
+
+
+					<div class="clear"></div>
+				</div>
+				<div class="clear height-50"></div>	
+				<div class="clear height-25"></div>	
+				<div class="clear"></div>
+			</div>
+		</div>
+	</section>
+
+	<section class="default_sc content-inside l-content-2" id="contact">
+		<div class="prelatife container">
+			<div class="content-text text-center">
+				{% if lang_active == 'ch' %}
+				<h3>调查表</h3>
+				{% else %}
+				<h3>Inquiry Form</h3>
+				{% endif %}
+			</div>
+			<div class="clear height-50"></div>
+
+			{# start form contact #}
+			<div class="box-form tl-contact-form">
+				{# <p>Please fill out the contact form below, we will respond to you shortly.</p> #}
+				{% if error|length > 0 %}
+				    <div class="alert alert-danger bg-danger">
+				    	<button type="button" class="close" data-dismiss="alert">&times;</button>
+					    <h6>Please fix the following input errors:</h6>
+					    <ul>
+					    	{% for dataError in error %}
+					    	<li>{{ dataError }}</li>
+					    	{% endfor %}
+					    </ul>
+				    </div>
+				{% endif %}
+				<div style="max-width:500px; margin:0 auto;">
+					{% if msg == 'error_message' %}
+					    <div class="alert alert-danger">
+					    	<button type="button" class="close" data-dismiss="alert">&times;</button>
+						    Please Check Captcha for sending contact form! 
+					    </div>
+					{% endif %}
+					{% if msg == 'success' %}
+					    <div class="alert alert-success">
+					    	<button type="button" class="close" data-dismiss="alert">&times;</button>
+						    Thank you for contacting us! we will respond to you shortly.
+					    </div>
+					{% endif %}
+				</div>
+				<form method="post" action="" role="form">
+					<div class="row default">
+						<div class="col-md-6 col-sm-6">
+							<div class="form-group">
+							    <label for="exampleInputName">{{ lang_message.Name|raw }}</label>
+							    <div class="clear"></div>
+							    <input type="text" name="Contact[name]" class="form-control" id="exampleInputName" required>
+							</div>
+						</div>
+						<div class="col-md-6 col-sm-6">
+							<div class="form-group">
+							    <label for="exampleInputName">{{ lang_message.Company|raw }}</label>
+							    <div class="clear"></div>
+							    <input type="text" name="Contact[company]" class="form-control" id="exampleInputName" required>
+							</div>
+						</div>
+					</div>
+					<div class="row default">
+						<div class="col-md-6 col-sm-6">
+							<div class="form-group">
+							    <label for="exampleInputName">{{ lang_message.Telephone|raw }}</label>
+							    <div class="clear"></div>
+							    <input type="text" name="Contact[phone]" class="form-control" id="exampleInputName" required>
+							</div>
+						</div>
+						<div class="col-md-6 col-sm-6">
+							<div class="form-group">
+							    <label for="exampleInputName">{{ lang_message.Email|raw }}</label>
+							    <div class="clear"></div>
+							    <input type="text" name="Contact[email]" class="form-control" id="exampleInputName" required>
+							</div>
+						</div>
+					</div>
+					<div class="row default">
+						<div class="col-md-12 col-sm-12">
+							<div class="form-group">
+							    <label for="exampleInputMessage">{{ lang_message.Address|raw }}</label> 
+							    <div class="clear"></div>
+							    <div class="clear"></div>
+							    <textarea name="Contact[address]" rows="2" class="form-control" required></textarea>
+
+							</div>
+						</div>
+					</div>
+					<div class="row default">
+						<div class="col-md-12 col-sm-12">
+							<div class="form-group">
+							    <label for="exampleInputMessage">{{ lang_message.Message|raw }}</label> 
+							    <div class="clear"></div>
+							    <div class="clear"></div>
+							    <textarea name="Contact[message]" rows="3" class="form-control" required></textarea>
+							</div>
+						</div>
+					</div>
+					
+					<div class="row default">
+						<div class="col-md-12 col-sm-12">
+							<div class="fright-inpd">
+								<div class="form-group mb-0">
+									<div class="fleft">
+										<div class="g-recaptcha" data-sitekey="6Ldj-WIUAAAAADReEjcewu6ayXfKFHNMqEb7HgNj"></div>
+									</div>
+									<div class="visible-xs height-10"></div>
+									<div class="fright">
+										<div class="clear height-2"></div>
+										<button type="submit" class="btn btn-default btns-submit-bt"></button>
+									</div>
+									<div class="clear"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="clear"></div>
+				</form> 
+				<div class="clear"></div>
+			</div>
+			{# end form contact #}
+
+			<script src='https://www.google.com/recaptcha/api.js'></script>
+
+			<div class="clear"></div>
+		</div>
+	</section>
+
+</div>
+
+<script type="text/javascript">
+	$(document).ready(function(){
+		if ($(window).width() > 768) {
+
+			var sheight = $(".block-featured-facility .lists .picture").height();
+			$(".block-featured-facility .lists .description").css('height', sheight+"px");
+			console.log(sheight);
+
+		}
+	});
+</script>
+{% endblock %}

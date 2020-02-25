@@ -1,0 +1,57 @@
+{% if menu != 'contact' %}
+<section class="default_sc blocksn-Greenbottomfts-nlu" id="homes_cn_section4">
+	<div class="prelatife container">
+		<div class="insides text-center">
+			<div class="textn_phone">
+				{% if lang_active == 'ch' %}
+				<h5>准备和我们说话了吗？</h5>
+				{% else %}
+				<h5>Ready to talk to us?</h5>
+				{% endif %}
+				<div class="clear height-15"></div>
+				<img src="{{ app.request.baseurl }}/asset/images/icons-phon-headrs.png" alt="" class="img-responsive center-block">
+				<div class="clear height-15"></div>
+				+62 353 3234445
+				<div class="clear height-15"></div>
+				<img src="{{ app.request.baseurl }}/asset/images/linesn-whites_or.png" alt="" class="img-responsive center-block">	
+				<div class="clear height-15"></div>
+				{% if lang_active == 'ch' %}
+				<a href="{{ path('contact', {lang: lang_active}) }}" class="btn btn-default btns_submn-green1 back-whites">提交询问</a>
+				{% else %}
+				<a href="{{ path('contact', {lang: lang_active}) }}" class="btn btn-default btns_submn-green1 back-whites">Submit An Inquiry</a>
+				{% endif %}
+				<div class="clear"></div>
+			</div>
+			<div class="clear"></div>
+		</div>
+	</div>
+</section>
+{% endif %}
+<!--/. Footer -->
+<footer class="foot">
+	<div class="prelatife container">
+		<div class="h110"></div>
+
+		<div class="innerts text-center">
+			<div class="lgo_footer_web text-center"><a href="{{ path('homepage', {lang: lang_active}) }}"><img src="{{ app.request.baseurl }}/asset/images/logo-abadi-lestari.svg" alt="" class="img-responsive center-block text-center"></a></div>
+			<div class="clear height-45"></div>
+			{% if lang_active == 'ch' %}
+			<p>Abadi Lestari Indonesia有限公司是一家燕窝加工厂位于印尼，东爪哇省，Bojonegoro市。 <br>
+				我们公司的主要竞争力是使用最好的原料来生产优质最终燕窝产品。</p>	
+			{% else %}
+			<p>PT. Abadi Lestari Indonesia is a swallow bird’s nest processing factory operating from Bojonegoro, East Java - Indonesia. <br>Our main competitive factor lies in the quality of our product, which came from quality raw materials and quality processings.</p>
+				
+			{% endif %}
+			<div class="clear height-20"></div>
+			<div class="lines-grey"></div>
+			<div class="clear height-20"></div>
+			<div class="t-copyrights text-center">
+				Copyright &copy; 2018 PT. Abadi Lestari, Indonesia. All Rights Reserved. <br>
+				Website design by Mark Design.
+			</div>
+			<div class="claer"></div>
+		</div>
+		<div class="clear height-20"></div>
+	</div>
+	<div class="clear"></div>
+</footer>

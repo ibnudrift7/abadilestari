@@ -1,0 +1,14 @@
+{% extends 'layouts/main.twig' %}
+{% block maincontent %}
+<body id="page-top">
+		<div class="wrapper prelatife h100per">
+				<div class="prelatife inside_pg_outer">
+					{% include "/layouts/header.twig" with { 'menu': block('menu') } %}
+					{% block content %}{% endblock %}
+					<div class="clear"></div>
+				</div>
+
+			{% include "/layouts/footer.twig" with { 'menu': block('menu') } %}
+		</div>
+</body>
+{% endblock %}

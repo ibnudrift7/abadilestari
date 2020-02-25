@@ -1,0 +1,76 @@
+{% extends layout %}
+{% block title %}Our Quality - {% endblock %}
+{% block menu %}quality{% endblock %}
+{% block content %}
+<div class="outers_cont_inside_page back-white">
+
+	<h1 style="visibilty: none; display:none;">Our Quality - {{ app_name }}</h1>
+	<div class="insides_toppage_blocks">
+		<div class="blocks_bottom_intop_page pg_quality">
+			<div class="insides">
+				<div class="blocks_top_ill">
+					<h2 class="title_page">Our Quality</h2>
+				</div>
+				
+				<div class="clear"></div>
+			</div>
+		</div>
+	</div>
+	
+	<section class="default_sc b_pg_quality" id="insides_page_about2">
+		<div class="container prelatife conts_about_top_mins">
+			<div class="content-text text-left">
+				<div class="row">
+					<div class="col-md-6">
+						<span>NS-PRO STONES COMMITMENT TOWARDS QUALITY</span>
+						<h2>Quality is not just the value that our<br />
+							customers&#39; can have, instead its&#39;<br />
+							their right..</h2>
+						<div class="clear"></div>
+						<p>We don&rsquo;t deliver second grade products, it&rsquo;s that simple. When customers bought NS-PRO&rsquo;s natural stones, what they expect to be delivered is the same quality natural stones that we displayed and presented on our catalogue or website. We realize that negative experiences from our customers will come roaring back to our business. Many of our customers are those who we have had connections for years or even decades. Buying natural stone products from Indonesia can be tricky as we have so many qualities here in Indonesia, but when you trust NS-PRO, you can sit back, relax and trust that all goods that you expect to receive are the first grades. Having provided with such quality natural stone products. you&#39;ll be surprised with how competitive we are when it comes to price. Let&#39;s take a visit to our warehouse where we can proove all of our statements, please don&#39;t hesitate contact us.</p>
+						<div class="clear"></div>
+					</div>
+					<div class="col-md-6">
+						<div class="visible-sm visible-xs">
+							<div class="pict_fl padding-top-25"><img src="{{ app.request.baseurl }}/asset/images/pict-quality-1.jpg" alt="" class="img-responsive"></div>
+						</div>
+					</div>
+				</div>
+				<div class="clear"></div>
+			</div>
+		</div>
+	</section>
+
+	<section class="default_sc" id="insides_page_quality3">
+		<div class="container prelatife insides">
+			<div class="content-text text-center">
+				<span>HOW WE DID IT</span>
+				<h2>How we&rsquo;re able to be consistent in quality<br />lies on how committed we are on each operation process</h2>
+				<div class="clear height-35"></div>
+
+				<div class="lists_quality_ch_data">
+					<div class="row">
+						{% if list_def_quality %}
+							{% for keys, item in list_def_quality %}
+								<div class="col-md-4 col-sm-6">
+									<div class="items">
+										<div class="pict"><img src="{{ app.request.baseurl }}/asset/images/{{ item.pict }}" alt="" class="img-responsive"></div>
+										<div class="desc">
+											<h6 class="titles">{{ item.title }}</h6>
+											<p>{{ item.desc|raw }}</p>
+										</div>
+									</div>
+								</div>
+							{% endfor %}
+						{% endif %}
+					</div>
+				</div>
+				{# end list quality #}
+
+				<div class="clear"></div>
+			</div>
+		</div>
+	</section>
+
+</div>
+{% endblock %}
